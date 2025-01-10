@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -8,21 +7,21 @@
         android:gravity="center">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="Nom d'utilisateur" />
+            android:text="Code de vérification" />
 
         <Button
-            android:id="@+id/generer"
+            android:id="@+id/verif_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Générer un code" />
+            android:text="Vérifier le code" />
 
         <TextView
-            android:id="@+id/code_genere"
+            android:id="@+id/tw_verif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />
