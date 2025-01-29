@@ -33,13 +33,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     }
 
+    //fonction qui genere le code de verification pseudo aleatoire
     private String generateCode(String username) {
         long timestamp = System.currentTimeMillis() / 1000 / 30;
         return String.valueOf((username.hashCode() + timestamp) % 1000000);
     }
 
     public void onClick(View v){
-        code = generateCode(username.toString());
+        code = generateCode(username.toString());           //on appelle la fonction qui genere le code quand l'utilisateur clique sur le bouton
+
+        //on envoie via un intent les informations "username" et "code" dans la 2nd activite
         Intent intent = new Intent(MainActivity.this, activity_auth.class);
         intent.putExtra("username",username.getText().toString());
         intent.putExtra("code",code);
