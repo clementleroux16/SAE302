@@ -4,7 +4,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/affiche_code"
@@ -17,15 +18,16 @@
             android:id="@+id/code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="password"
             android:ems="10"
             android:inputType="text"
-            android:text="Code de vérification" />
+            android:hint="@string/Edit_auth" />
 
         <Button
             android:id="@+id/verif_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vérifier le code" />
+            android:text="@string/btn_auth" />
 
         <TextView
             android:id="@+id/tv_verif"

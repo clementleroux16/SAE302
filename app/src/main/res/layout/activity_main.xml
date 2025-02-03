@@ -5,21 +5,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="24dp">
 
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="username"
             android:ems="10"
             android:inputType="text"
-            android:text="Nom d'utilisateur" />
+            android:hint="@string/Edit_main" />
 
         <Button
             android:id="@+id/generer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Générer un code" />
+            android:text="@string/btn_name" />
 
         <TextView
             android:id="@+id/code_genere"
