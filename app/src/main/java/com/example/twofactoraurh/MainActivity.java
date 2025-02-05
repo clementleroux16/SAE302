@@ -25,12 +25,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        code_genere = findViewById(R.id.code_genere);
         username = findViewById(R.id.username);
         generer = findViewById(R.id.generer);
 
         generer.setOnClickListener(this);
-
     }
 
     //fonction qui genere le code de verification pseudo aleatoire
