@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TwoFactorAuth</string>
+    <string name="btn_name">生成验证码</string>
+    <string name="Edit_main">用户名</string>
+    <string name="Edit_auth">验证码</string>
+    <string name="btn_auth">验证验证码</string>
+    <string name="user_registered">新用户 %1$s 已注册</string>
+    <string name="wrong_code">验证码错误：注册失败</string>
+    <string name="code_gps_wrong">连接被拒绝：请检查验证码和/或您的GPS位置</string>
+    <string name="affiche_code">"之前生成的验证码：%1$s"</string>
+    <string name="ok_connection">连接成功：验证码正确且位置有效</string>
+    <string name="user_request">请输入用户名！</string>
+</resources>

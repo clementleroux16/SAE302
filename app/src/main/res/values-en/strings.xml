@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TwoFactorAuth</string>
+    <string name="btn_name">Generate a code</string>
+    <string name="Edit_main">Username</string>
+    <string name="Edit_auth">Verification code</string>
+    <string name="btn_auth">Verify code</string>
+    <string name="user_registered">New user %1$s registered</string>
+    <string name="wrong_code">Incorrect code: registration failed</string>
+    <string name="code_gps_wrong">Connection refused: check the code and/or your GPS location</string>
+    <string name="affiche_code">"Previously generated verification code: %1$s"</string>
+    <string name="ok_connection">Connection successful: correct code and valid position</string>
+    <string name="user_request">Please enter a username!</string>
+</resources>
