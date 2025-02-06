@@ -40,14 +40,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     }
 
     public void onClick(View v){
-        if(!username.getText().toString().equals("")){
-            Toast.makeText(this,"Veuillez entrer un code !", Toast.LENGTH_SHORT).show();
+        String nom = username.getText().toString();
+        if(nom.equals("")){ //Vérification que la châine ne soit pas vide
+            Toast.makeText(this,"Veuillez entrer un nom d'utilisateur !", Toast.LENGTH_SHORT).show();
         } else {
-            code = generateCode(username.toString());           //on appelle la fonction qui genere le code quand l'utilisateur clique sur le bouton
+            code = generateCode(nom);           //on appelle la fonction qui genere le code quand l'utilisateur clique sur le bouton
 
             //on envoie via un intent les informations "username" et "code" dans la 2nd activite
             Intent intent = new Intent(MainActivity.this, activity_auth.class);
-            intent.putExtra("username", username.getText().toString());
+            intent.putExtra("username", nom);
             intent.putExtra("code", code);
 
             startActivity(intent);
