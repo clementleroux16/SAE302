@@ -5,19 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener{
-    TextView code_genere;
     EditText username;
     Button generer;
     String code;
@@ -41,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     public void onClick(View v){
         String nom = username.getText().toString();
-        if(nom.equals("")){ //Vérification que la châine ne soit pas vide
-            Toast.makeText(this,"Veuillez entrer un nom d'utilisateur !", Toast.LENGTH_SHORT).show();
+        if(nom.isEmpty()){ //Vérification que la châine ne soit pas vide
+            Toast.makeText(this,getString(R.string.user_request), Toast.LENGTH_SHORT).show();
         } else {
             code = generateCode(nom);           //on appelle la fonction qui genere le code quand l'utilisateur clique sur le bouton
 

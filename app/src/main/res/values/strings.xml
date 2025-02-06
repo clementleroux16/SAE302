@@ -1,7 +1,13 @@
 <resources>
-    <string name="app_name">TwoFactorAurh</string>
+    <string name="app_name">TwoFactorAuth</string>
     <string name="btn_name">Générer un code</string>
     <string name="Edit_main">Nom d\'utilisateur</string>
     <string name="Edit_auth">Code de vérification</string>
     <string name="btn_auth">Vérifier le code</string>
+    <string name="user_registered">Nouvel utilisateur %1$s enregistré</string>
+    <string name="wrong_code">Code incorrect : enregistrement impossible</string>
+    <string name="code_gps_wrong">Connexion refusée: vérifiez le code et/ou votre position GPS</string>
+    <string name="affiche_code">"Code de vérification généré précédemment: %1$s"</string>
+    <string name="ok_connection">Connexion réussie: code bon et position valide</string>
+    <string name="user_request">Veuillez entrer un nom d\'utilisateur !</string>
 </resources>

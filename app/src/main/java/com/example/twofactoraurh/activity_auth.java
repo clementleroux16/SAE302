@@ -18,9 +18,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import java.util.Map;
-
-
 public class activity_auth extends AppCompatActivity implements OnClickListener {
     Button verif_code;
     EditText entree_code;
@@ -46,7 +43,7 @@ public class activity_auth extends AppCompatActivity implements OnClickListener 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
         code = intent.getStringExtra("code");
-        affiche_code.setText("Code de vérification généré précédemment: " + code);
+        affiche_code.setText(getString(R.string.affiche_code,code));
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     }
@@ -83,9 +80,9 @@ public class activity_auth extends AppCompatActivity implements OnClickListener 
             float distance = calculeDistance(savedLatitude, savedLongitude, latitude, longitude);
 
             if ((distance < 500) && (code.compareTo(code_entree) == 0)) { // si la distance est plus petite que 500 metres et que le code est le bon
-                tv_verif.setText("Connexion réussie: code bon et position valide");
+                tv_verif.setText(getString(R.string.ok_connection));
             } else {
-                tv_verif.setText("Connexion refusée: vérifiez le code et/ou votre position GPS");
+                tv_verif.setText(getString(R.string.code_gps_wrong));
             }
         } else {
             //si l'utilisateur n'est pas connu par l'application, alors on l'enregistre via un shared preferences
@@ -95,10 +92,10 @@ public class activity_auth extends AppCompatActivity implements OnClickListener 
                 editor.putFloat("latitude_" + username, (float) latitude);
                 editor.putFloat("longitude_" + username, (float) longitude);
                 editor.apply();         //on applique les modifications
-                tv_verif.setText("Nouvel utilisateur " + username + " enregistré");
+                tv_verif.setText(getString(R.string.user_registered,username));
             }
             else {
-                tv_verif.setText("Code incorrect : enregistrement impossible");
+                tv_verif.setText(getString(R.string.wrong_code));
                 entree_code.setText("");
             }
         }
