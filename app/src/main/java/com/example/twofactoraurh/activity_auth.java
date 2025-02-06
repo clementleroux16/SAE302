@@ -51,9 +51,8 @@ public class activity_auth extends AppCompatActivity implements OnClickListener 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     }
 
-
-    public void onClick(View v){
-
+    public void onClick(View v) {
+        String code_entree = entree_code.getText().toString();
         //permet de verifier les autorisations de l'application
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
@@ -83,24 +82,26 @@ public class activity_auth extends AppCompatActivity implements OnClickListener 
             //on appelle la methode qui permet de calculer la distance entre 2 points en entrant les 4 coordonnees gps en parametre d'entree
             float distance = calculeDistance(savedLatitude, savedLongitude, latitude, longitude);
 
-            String code_entree = entree_code.getText().toString();
-
-            if ((distance < 500) && (code.compareTo(code_entree)==0)) { // si la distance est plus petite que 500 metres et que le code est le bon
+            if ((distance < 500) && (code.compareTo(code_entree) == 0)) { // si la distance est plus petite que 500 metres et que le code est le bon
                 tv_verif.setText("Connexion réussie: code bon et position valide");
             } else {
                 tv_verif.setText("Connexion refusée: vérifiez le code et/ou votre position GPS");
             }
         } else {
             //si l'utilisateur n'est pas connu par l'application, alors on l'enregistre via un shared preferences
-
-            SharedPreferences.Editor editor = sharedPreferences.edit();    //permet d'acceder a l'editeur de sharedPreferences
-            editor.putString("username_" + username, username);
-            editor.putFloat("latitude_" + username, (float) latitude);
-            editor.putFloat("longitude_" + username, (float) longitude);
-            editor.apply();         //on applique les modifications
-            tv_verif.setText("Nouvel utilisateur " + username +" enregistré");
+            if (code.compareTo(code_entree) == 0) { // Vérification que le code entrée est correct
+                SharedPreferences.Editor editor = sharedPreferences.edit();    //permet d'acceder a l'editeur de sharedPreferences
+                editor.putString("username_" + username, username);
+                editor.putFloat("latitude_" + username, (float) latitude);
+                editor.putFloat("longitude_" + username, (float) longitude);
+                editor.apply();         //on applique les modifications
+                tv_verif.setText("Nouvel utilisateur " + username + " enregistré");
+            }
+            else {
+                tv_verif.setText("Code incorrect : enregistrement impossible");
+                entree_code.setText("");
+            }
         }
-
     }
 
     private float calculeDistance(double lat1, double lon1, double lat2, double lon2) {
