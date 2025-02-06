@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TwoFactorAurh</string>
+    <string name="btn_name">Générer un code</string>
+    <string name="Edit_main">Nom d\'utilisateur</string>
+    <string name="Edit_auth">Code de vérification</string>
+    <string name="btn_auth">Vérifier le code</string>
 </resources>
