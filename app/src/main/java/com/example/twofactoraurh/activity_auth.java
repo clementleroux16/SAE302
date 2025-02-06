@@ -33,10 +33,10 @@ public class activity_auth extends AppCompatActivity implements OnClickListener 
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_auth);
 
-        verif_code = (Button) findViewById(R.id.verif_code);
-        entree_code = (EditText) findViewById(R.id.code);
-        tv_verif = (TextView) findViewById(R.id.tv_verif);
-        affiche_code = (TextView) findViewById(R.id.affiche_code);
+        verif_code = findViewById(R.id.verif_code);
+        entree_code = findViewById(R.id.code);
+        tv_verif = findViewById(R.id.tv_verif);
+        affiche_code = findViewById(R.id.affiche_code);
         verif_code.setOnClickListener(this);
 
         //on recupere les informations envoyees depuis la premiere activite
